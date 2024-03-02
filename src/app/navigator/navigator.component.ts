@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {tasks} from "src/app/configuration/tasks";
 import {ActivatedRoute} from "@angular/router";
 import {RouterService} from "src/app/_services/router.service";
-import {MatDialog} from "@angular/material/dialog";
+import {MatLegacyDialog as MatDialog} from "@angular/material/legacy-dialog";
 import {PreviewComponent} from "src/app/preview/preview.component";
 
 @Component({
