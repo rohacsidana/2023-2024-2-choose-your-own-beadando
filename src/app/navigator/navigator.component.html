@@ -7,7 +7,7 @@
                          [selectedTask]="selectedTask"
                          (taskSelected)="selectTask($event)">
         <!-- Solution -->
-        <mat-card *ngIf="selectedTask">
+        <mat-card appearance="outlined" *ngIf="selectedTask">
           <mat-card-header style="font-size: 20px; margin-bottom: 20px">
             {{ currentIndex }}. {{ selectedTask }} feladat megoldása
           </mat-card-header>
