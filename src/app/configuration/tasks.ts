@@ -1,6 +1,87 @@
 export const tasks = [
   {
     A: {
+      imageUrl: 'assets/images/tasks/1/A/rectangle.gif',
+      story: '',
+      subTasks: [
+        {
+          text: `Vegyél fel 4 darab Angular Material slidert (https://material.angular.io/components/slider/overview).
+
+A sliderek egy szín konfigurálás fogják elősegíteni, az RGBA (Red Green Blue Alpha) 4 értékét fogják definiálni.
+Emiatt az első három slider 0 és 255 közötti értéket tudjon felvenni, az utolsó pedig 0 és 1 közöttit.`,
+          xp: 1
+        },
+        {
+          text: `<b>Komponens-szintű stílusosztály</b> (például ".rectangle") segítségével rajzolj ki egy négyzetet a sliderek alá.`,
+          xp: 1
+        },
+        {
+          text: `A sliderek mozgatásával a négyzet háttere automatikusan változzon a beállított értékek által
+          definiált színre.
+          `,
+          xp: 1
+        },
+        {
+          text: `<b>Globális stílus</b>: A megfelelő fájlban definiáld, hogy az oldalon található
+          összes gombnak legyen egy vastag, színes kerete (border).
+
+Ez a feladat teljesen független az első 3 részfeladattól.`,
+          xp: 1
+        },
+      ],
+      title: `Styling`
+    },
+    B: {
+      imageUrl: 'assets/images/tasks/1/B/fishnet.jpeg',
+      story: '',
+      subTasks: [
+        {
+          text: `Készíts egy grid-et (https://material.angular.io/components/grid-list/overview) 4 listaelemmel.
+          Az egyes elemeknek adj különböző háttérszínt, hogy az elrendezés mindig egyértelmű legyen.
+
+A feladat célja, hogy a rácsok eltérő módon legyenek elrendezve a böngészőablak méretétől függően.
+
+Segítség: A grid list dokumentációjának "Examples" fülén található példák tudnak segíteni az adatstruktúra kialakításában.`,
+          xp: 1
+        },
+        {
+          text: `Alapesetben a cellák legyen a következőképpen rendezve:
+
+Nagy felbontás (>= Large): Az első sort ugyanakkora mérettel töltse ki az első két cella, a második sorban az 1.
+(összesen a 3.) cella a terület harmadát foglalja el, az utolsó cella perdig a maradék 2/3-ot.
+
+Közepes felbontás (Medium): Két soros legyen továbbra is a rács, egyenlő szélességű legyen minden cella.
+
+Kis felbontás (<= Small): 4 darab sora legyen a rácsnak, minden cella töltse ki a teljes szélességet.
+
+Segítség: a méretekhez érdemes a material layout által definiált töréspontokat használni
+(ezekre hivatkoztam feljebb, pl.: Small, Medium, Large).
+Ezek, a komponensektől független részek, egy külön csomagban, a CDK-ban találhatóak:
+https://material.angular.io/cdk/layout/overview`,
+          xp: 1
+        },
+        {
+          text: `Egy cella felé mozgatva az egeret jelenjen meg felugró tooltip-ben, hogy hány oszlop szélességet
+          vesz fel az adott cella.
+
+Segítség: https://material.angular.io/components/tooltip/overview`,
+          xp: 1
+        },
+        {
+          text: `Minden cellában szerepeljen két gomb. Az egyik a cella szélességének csökkentésére (-), a másik
+          pedig a cella méretének növelésére (+).
+
+Gombnyomásra a cella szélessége 1-el több vagy 1-el kevesebb oszlopot foglaljon el.
+
+Nem szükséges a szomszédokat hozzáigazítani, ha a növelés miatt külön sorba törik egy cella, nem gond!`,
+          xp: 1
+        }
+      ],
+      title: `Responsivity`
+    },
+  },
+  {
+    A: {
       imageUrl: 'assets/images/tasks/1/A/loading.png',
       story: ``,
       subTasks: [
@@ -39,83 +120,6 @@ Pluszpont jár viccess képek választásáért.
       `
     },
     B: {
-      imageUrl: 'assets/images/tasks/1/B/object.jpg',
-      story: '',
-      subTasks: [
-        {
-          text: `Készíts egy tömböt legalább 3 elemmel.
-           Tárold benne tárgyak adatait tárolod.
-
-Az elemek a következő adatokat tartalmazzák minden tárgyról:
-- kép (relatív URL, helyezz hozzá képeket a projekt asset-jei közé),
-- név (sztring)
-- érték (egész szám).
-
-Pluszpont jár viccess képek választásáért.`,
-          xp: 1
-        },
-        {
-          text: `Egy template segítségével definiáld, hogy az egyes tárgyakohz tartozó HTML
-          elemek hogy nézzenenk ki.
-          A template-ben csak a kép illetve a név szerepeljen, tetszőleges formázással.
-          Jelenítsd is meg az előző feladatban létrehozott tárgyakat a template segítségével.
-          `,
-          xp: 1
-        },
-        {
-          text: `Egy tárgy felé mozgatva az egeret jelenjen meg egy tooltip,
-          ami kiírja a tárgy értékét.
-
-Segítség: https://material.angular.io/components/tooltip/overview`,
-          xp: 1
-        },
-        {
-          text: `Tárgyak legyenek kiválaszthatóak kattintással.
-          A kiválasztott elem vastag borderrel legyen kiemelve.
-          Egyszerre mindig csak 1 tárgy lehessen kiválasztott.`,
-          xp: 1
-        }
-      ],
-      title: `Template`
-    },
-  },
-  {
-    A: {
-      imageUrl: 'assets/images/tasks/2/A/foxy.png',
-      story: '',
-      subTasks: [
-        {
-          text: `Készíts egy 10x10-es táblázatot.
-          Kigenerálásához használj for ciklust (*ngFor).
-          Nem muszáj az Angular Material-os táblázatot használni, lehet sima \`<table>\` elem is.`,
-          xp: 1
-        },
-        {
-          text: `A táblázat legyen cikk-cakk-osan színezve.
-          Azaz a páratlan számú sorok páros illetve a páros számú sorok páratlanadik számú
-          mezői kapjanak egy enyhén sötét hátteret.
-
-Segítség: Használható például dinamikus osztály-hozzárendelés: [class.slightly-dark-bg]="..."`,
-          xp: 1
-        },
-        {
-          text: `A felhasználó tudjon cellákat kiválasztani, azaz, amikor a táblázat cellájára
-          kattint, a kattintott cella kapjon élénk háttérszínt.
-
-A kiválasztás újbóli kattintással legyen visszavonható.
-          `,
-          xp: 1
-        },
-        {
-          text: `Globális stílusként definiáld, hogy
-          az oldalon található össze táblázat (\`<table>\`) cellája (\`<td>\`) legyen egységes méretű
-          (például 50px x 50px) és kapjon egy vékony bordert is.`,
-          xp: 1
-        },
-      ],
-      title: `Styling`
-    },
-    B: {
       imageUrl: 'assets/images/tasks/2/B/2B.jpg',
       story: '',
       subTasks: [
@@ -123,45 +127,51 @@ A kiválasztás újbóli kattintással legyen visszavonható.
           text: `Készíts egy reaktív űrlapot.
           Az űrlap tartalmazzon 3 mezőt:
 
-- szoftver neve (sztring)
-- aktivációs kulcs (sztring)
-- érvényesség (date).
+- licence kulcs (sztring)
+- korlátozott érvényesség (checkbox)
+- érvényesség lejárta (date).
 
 Az űrlaphoz hozz létre egy FormGroup-ot is TypeScriptben, amit köss
 is össze ( [formGroup]="" ) a .html fájlban létrehozott űrlappal.
 
 Segítség: https://angular.io/guide/reactive-forms
+https://material.angular.io/components/checkbox/overview
 https://material.angular.io/components/datepicker/overview`,
           xp: 1
         },
         {
           text: `Adj két validációt az előző részben létrehozott űrlaphoz:
 
-- A szoftver neve legyen kötelező mező.
-- Az aktivációs kulcsot a következő formátumban kelljen megadni:
-XXXX-XXXX-XXXX, ahol az X lehet szám vagy nagybetű.
+- A licence kulcs megadása legyen kötelező.
+- Az kulcsot a következő formátumokbanban lehessen megadni:
+XXXX-XXXX-XXXX vagy XXXXXX-XXXXXX, ahol az X lehet szám vagy nagybetű.
 
- A fenti ellenőrzésekhez használd az Angular alap validátorait, nem szükséges
+A fenti ellenőrzésekhez használd az Angular alap validátorait, nem szükséges
 sajátot létrehozni.`,
           xp: 1
         },
         {
-          text: `Az "érvényesség" mezőre készíts egy saját validátort.
-          Csak a mai napnál későbbi dátumot fogadjon el az űrlap.`,
+          text: `Készíts egy saját group szintű validátort.
+
+Ez akkor dobjon hibát, ha a "korlátozott érvényesség" checkbox be van pipálva, viszont az
+"érvényesség lejárta" mezőhöz nem lett megadva helyes dátum.`,
           xp: 1
         },
         {
           text: `Az űrlapon szerepeljen egy submit gomb is.
-          Ez a gomb legyen inaktív (disabled), amikor az űrlap nem valid.
-          Valid form esetén gombnyomásra egy felugró alert-be írasd ki az űrlapon
-          szereplő adatokat.
-          Például:
+          Gombnyomásra egy felugró dialogban
+          (https://material.angular.io/components/dialog/overview)
+          írasd ki, hogy az űrlap valid-e vagy sem.
 
-          Név: Windows 11
+Amennyiben az űrlap valid a modalban jelenjenek meg a megadott adatok is.
 
-          Kulcs: 1234-ABCD-AB12
+Például:
 
-          Érvényesség: 2023. 12. 31.`,
+          Licence: 123456-987654
+
+          Korlátozott érvényesség: Igen
+
+          Érvényesség: 2024. 12. 31.`,
           xp: 1
         },
       ],
@@ -171,40 +181,37 @@ sajátot létrehozni.`,
   {
     A: {
       imageUrl: 'assets/images/tasks/3/A/nou.webp',
-      story: 'Példa: {{ "radahn" | reverse }} kimenete: "Nhadar"',
+      story: '',
       subTasks: [
         {
           text: `Készíts egy saját pipe-ot.
           A többi részfeladat alapján hozz helyes döntést abban,
-          hogy pure vagy impure pipe-ot érdemes-e itt használni.`,
+          hogy pure vagy impure pipe-ot érdemes-e itt használni.
+          A pipe titkosítsa paraméterként fogadott sztringet.
+          Az alfeladatokban részletezett esetekre írass ki 1-1 példát a komponensben.`,
           xp: 1
         },
         {
-          text: `A pipe fordítsa meg a paraméterként fogadott sztringet,
-          mintha azt visszafelé olvasnánk.
+          text: `Amennyiben az értéke látszólag egy bankszámlaszám ("[0-9]{8}-[0-9]{8}") az eredmény
+          egy csillag legyen amelyet a bankszámlaszám utolsó 4 számjegye követ.
 
-Az eredmény első betűje mindig legyen nagybetűs a többi pedig
-kisbetűs, akkor is, ha az eredeti szövegben nem így volt.
-
-A komponenshez tartozó HTML-be szúrj be egy példát a pipe működésére.`,
+Példa: {{ "12123434-56567878" | encrypt }} kimenete: "*7878"`,
           xp: 1
         },
         {
-          text: `Definiálj a komponens TS részében egy tömböt:
+          text: `Amennyiben az értéke látszólag egy telefonszám, az eredményben
+          a számok legyenek csillag karkterre cserélve, leszámítva az utolsó kettőt.
 
-['Malenia', 'Mohg', 'Morgott']
+Elegendő egyetlen telefonszám formátumot kezelni, pl.: 06-20-123-4567.
 
-A komponens inicializációjakor írasd ki konzolra a tömb elemeit revertálva,
-a pipe használatával!`,
+Példa: {{ "06-20-123-4567" | encrypt }} kimenete: "**-**-***-**67"`,
           xp: 1
         },
         {
-          text: `Helyezz el a felületen egy \`<input>\` mezőt és egy gombot.
-Gombnyomásra az \`<input>\` mező tartalmának revertált verzióját szúrd be egy
-(alapból üres) tömbbe. (A tömb mérete minden gombnyomásra 1-el nő.)
+          text: `Ha a sztring se nem bankszámlaszám se nem telefonszám, akkor az összes karakterét
+          cseréld csillagra.
 
-A tömb aktuális tartalmát listaelemekként (\`<ul>\` > \`<li>\`) jelenítsd is meg
-a felületen. `,
+Példa: {{ "password" | encrypt }} kimenete: "********"`,
           xp: 1
         },
       ],
@@ -249,13 +256,12 @@ A kiválasztás módosításakor váltson nyelvet a felület.`,
           xp: 1
         },
         {
-          text: `A nyelvi fájlokban definiálj egy új kulcsot:
-          "CURRENT_LANGUAGE".
-          A nyelvválasztó felett jelenjen meg a kulcshoz tartozó fordítás,
-          pl. magyar nyelv esetén:
-          "Jelenleg magyar nyelven jelenik meg az oldal."
-          A "magyar" szó interpolált legyen, tehát változóként helyettesítsd be a
-          2. részfeladatban már definiált nyelvi fordításokat.
+          text: `Minden nyelvváltáskor növelj egy számlálót.
+          A felületen egy fordítás felhasználásával írasd ki, hogy mennyi nyelvváltás történt összesen.
+          A szöveg magyarul:
+          "Összesen 10 nyelvváltás történt eddig."
+          Angolul:
+          "There were 10 language changes so far."
 
 Segítség: https://www.vitamindev.com/angular/how-to-use-parameters-in-ngx-translate/`,
           xp: 1
@@ -270,39 +276,34 @@ Segítség: https://www.vitamindev.com/angular/how-to-use-parameters-in-ngx-tran
       story: '11223344-55667788',
       subTasks: [
         {
-          text: `Készíts egy direktívát, amely csak \`<input>\`
-                mezőkre helyezhető.
-                A direktíva célja bankszámlaszámok validálása lesz.
+          text: `Készíts egy direktívát "PermissionDirective" nevű direktívát.
+                A direktíva célja, hogy a felhasználó jogosultságai alapján módosítsa a HTML elemet amire helyezik.
 
-Helyezz el egy példa input mezőt a felületen a direktívával, amin egyből
-tesztelhető lesz majd annak működése.
+A felületen helyezz el egy selectort a következő értékekkel:
+- Olvasási jog
+- Írási jog
+- Adminisztrátori jog
 
-Segítség: selector.
+Segítség: https://material.angular.io/components/select/overview#multiple-selection.
           `,
           xp: 1
         },
         {
-          text: `A direktíva változtassa zöldre az input hátterét amennyiben, az input
-          "12345678-12345678" vagy "12345678-12345678-12345678" formátumú értéket
-          tartalmaz.
+          text: `A komponensben vegyél fel 1-1 DOM elemet mindhárom jogosultsághoz és rakd
+          rájuk a direktívát.
           `,
           xp: 1
         },
         {
-          text: `Amennyiben "12345678 12345678" vagy
-          "12345678 12345678 12345678" formátumú bankszámlaszámot ír be a felhasználó,
-          akkor a direktíva automatikusan alakítsa "12345678-12345678" vagy
-          "12345678-12345678-12345678" formátumra az input értékét.
-          Tehát a space karaktereket cserélje "-" karakterekre ebben a két esetben.
+          text: `Azon funkciók amelyekhez írási jogra lenne szükség, de a felhasználónak csak
+          olvasási jog van, kapjanak sárga hátteret.
           `,
           xp: 1
         },
         {
           text: `
-          Az előző részfeladat (az automatikus formázás) legyen ki-be kapcsolható egy
-          input paraméter segítségével.
-          Tehát meg lehessen mondani a direktívának, hogy végrehajtsa-e az automatikus
-          formázást vagy pedig ne.
+          Azok a funkciók amelyekhez admin jogosultságra lenne szükség ne is jelenjen meg, ha
+          a felhasználó nem rendelkezik vele.
           `,
           xp: 1
         },
@@ -398,7 +399,7 @@ Ez a szöveg tűnjön el, amennyiben visszahúzunk személyeket balra és
           xp: 1
         },
       ],
-      title: `Drag & Drop`
+      title: `Tree & Clipboard`
     },
     B: {
       imageUrl: 'assets/images/tasks/5/B/burger.PNG',
