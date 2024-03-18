@@ -1,4 +1,4 @@
-:host(.unimplemented) {
+:host(.unimplemented) .task-image-container {
   filter: grayscale(1);
 }
 
@@ -10,6 +10,10 @@ mat-list {
 
     markdown {
       white-space: normal;
+
+      ::ng-deep a {
+        color: white;
+      }
     }
   }
 }

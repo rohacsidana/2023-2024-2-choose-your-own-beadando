@@ -8,6 +8,14 @@ import {configuration} from "src/app/configuration/configuration";
 })
 export class SummaryComponent implements OnInit {
   expectedResult: number = 0;
+  images: Map<number, string> = new Map([
+    [1, 'elden_ring.mp4'],
+    [2, 'mad.gif'],
+    [3, 'mediocre.gif'],
+    [4, 'alright.gif'],
+    [5, 'yeah.gif'],
+    [6, 'perfect.gif'],
+  ]);
   maxPoints: number = configuration.length * 4;
   thresholdDifference: number = 0.15;
   constructor() { }
