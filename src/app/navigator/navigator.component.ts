@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {tasks} from "src/app/configuration/tasks";
 import {ActivatedRoute} from "@angular/router";
 import {RouterService} from "src/app/_services/router.service";
-import {MatDialog} from "@angular/material/dialog";
 import {PreviewComponent} from "src/app/preview/preview.component";
+import {NzModalService} from "ng-zorro-antd/modal";
 
 @Component({
   selector: 'app-navigator',
@@ -15,7 +15,7 @@ export class NavigatorComponent implements OnInit {
   currentIndex: number = 1;
   selectedTask?: 'A' | 'B';
   tasks = tasks;
-  constructor(private dialog: MatDialog,
+  constructor(private modalService: NzModalService,
               private route: ActivatedRoute,
               private routerService: RouterService) {}
 
@@ -42,15 +42,15 @@ export class NavigatorComponent implements OnInit {
     // currentIndex starts from 1 not 0
     if (this.tasks[this.currentIndex - 1] && this.tasks[this.currentIndex - 1].preview) {
       console.log('has preview');
-      const dialogRef = this.dialog.open(PreviewComponent, {
-        data: {
+
+      this.modalService.create({
+        nzTitle: undefined,
+        nzFooter: null,
+        nzContent: PreviewComponent,
+        nzData: {
           imageUrl: this.tasks[this.currentIndex - 1].preview?.imageUrl,
           text: this.tasks[this.currentIndex - 1].preview?.text,
-        },
-      });
-
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
+        }
       });
     }
     if (this.currentIndex <= tasks.length) {

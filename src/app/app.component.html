@@ -1,17 +1,17 @@
-<mat-drawer-container style="height: 100%">
-  <mat-drawer mode="side" opened>
-    <button mat-button
-            class="display-block text-left w-100"
-            (click)="routerService.routeToTask(1)">
-      Feladatsor
-    </button>
-    <button mat-button
-            class="display-block text-left w-100"
-            (click)="routerService.routeToSummary()">
-      Várható értékelés
-    </button>
-  </mat-drawer>
-  <mat-drawer-content>
+<nz-layout>
+  <nz-sider nzWidth="200px" nzTheme="light">
+    <ul nz-menu nzMode="inline" class="sider-menu">
+      <li nz-menu-item
+          (click)="routerService.routeToTask(1)">
+        Feladatsor
+      </li>
+      <li  nz-menu-item
+           (click)="routerService.routeToSummary()">
+        Várható értékelés
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout class="inner-layout">
     <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </nz-layout>
+</nz-layout>

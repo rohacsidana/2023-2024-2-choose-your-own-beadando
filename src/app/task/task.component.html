@@ -18,24 +18,24 @@
 
 <div *ngIf="!selected"
      class="text-center m-b-10">
-  <button mat-raised-button (click)="thisWayBraveAdventurer.emit()">
+  <button nz-button (click)="thisWayBraveAdventurer.emit()">
     Ezt választom
   </button>
 </div>
 
-<mat-list>
-  <div mat-subheader>Feladatok</div>
-  <mat-list-item *ngFor="let task of tasks; let index = index">
-    <mat-icon matListItemIcon
-              *ngIf="true"
-              style="min-width: 40px">
-      {{ configuration.subTasks[index + 1] ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-    <div style="flex-grow: 1">
+<h2>Feladatok</h2>
+<nz-list nzItemLayout="horizontal">
+  <nz-list-item *ngFor="let task of tasks; let index = index"
+                class="display-block">
+    <span nz-icon
+          [nzType]="configuration.subTasks[index + 1] ? 'check-square' : 'border'"
+          nzTheme="outline"
+          class="checker"></span>
+    <span class="points">{{task.xp}} pont</span>
+    <div>
       <markdown [data]="task.text">
       </markdown>
     </div>
-    <div matListItemLine
-         class="text-right"
-         style="min-width: 50px">{{task.xp}} pont</div>
-  </mat-list-item>
-</mat-list>
+    <nz-divider></nz-divider>
+  </nz-list-item>
+</nz-list>

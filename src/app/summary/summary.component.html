@@ -32,50 +32,56 @@
   </div>
 </ng-template>
 
-<mat-card appearance="outlined" class="m-auto" style="width: 500px;">
-  <mat-card-header class="display-block m-b-30">
-    <h1 class="m-b-0">
-      Várható eredmény: <b>{{ expectedResult }}</b> / {{ maxPoints }} pont
-    </h1>
-    <p class="font-style-italic">
-      A várható eredmény feltételezi, hogy a kipipált feladatok valóban tökéletesen megoldásra kerültek.
-    </p>
-  </mat-card-header>
-  <mat-card-content>
-    <ng-container *ngTemplateOutlet="level; context: {
-      description: 'Tökéletes, most már beküldheted a megoldást!',
-      level: 6,
-      threshold: maxPoints
-    }"></ng-container>
+<nz-card class="m-auto" style="width: 500px;"
+  [nzTitle]="summaryTitleTemplate"
+  [nzCover]="summaryCoverTemplate">
+  <ng-template #summaryTitleTemplate>
+    <div class="display-block">
+      <h1 class="m-b-0">
+        Várható eredmény: <b>{{ expectedResult }}</b> / {{ maxPoints }} pont
+      </h1>
+      <p class="font-style-italic m-b-0">
+        A várható eredmény feltételezi, hogy a kipipált feladatok valóban tökéletesen megoldásra kerültek.
+      </p>
+    </div>
+  </ng-template>
+  <ng-template #summaryCoverTemplate>
+    <div style="padding: 10px;">
+      <ng-container *ngTemplateOutlet="level; context: {
+        description: 'Tökéletes, most már beküldheted a megoldást!',
+        level: 6,
+        threshold: maxPoints
+      }"></ng-container>
 
-    <ng-container *ngTemplateOutlet="level; context: {
-      description: 'Egész jó, de innen már semmi a max pont elérése, fordulj vissza és csinálj meg még pár feladatot.',
-      level: 5,
-      threshold: maxPoints * 0.85
-    }"></ng-container>
+        <ng-container *ngTemplateOutlet="level; context: {
+        description: 'Egész jó, de innen már semmi a max pont elérése, fordulj vissza és csinálj meg még pár feladatot.',
+        level: 5,
+        threshold: maxPoints * 0.85
+      }"></ng-container>
 
-    <ng-container *ngTemplateOutlet="level; context: {
-      description: 'Már csak egy kevés kéne a sikerhez, fordulj vissza és csinálj meg még pár feladatot.',
-      level: 4,
-      threshold: maxPoints * 0.7
-    }"></ng-container>
+        <ng-container *ngTemplateOutlet="level; context: {
+        description: 'Már csak egy kevés kéne a sikerhez, fordulj vissza és csinálj meg még pár feladatot.',
+        level: 4,
+        threshold: maxPoints * 0.7
+      }"></ng-container>
 
-    <ng-container *ngTemplateOutlet="level; context: {
-      description: 'Tisztes középszer, fordulj vissza és csinálj meg még pár feladatot.',
-      level: 3,
-      threshold: maxPoints * 0.55
-    }"></ng-container>
+        <ng-container *ngTemplateOutlet="level; context: {
+        description: 'Tisztes középszer, fordulj vissza és csinálj meg még pár feladatot.',
+        level: 3,
+        threshold: maxPoints * 0.55
+      }"></ng-container>
 
-    <ng-container *ngTemplateOutlet="level; context: {
-      description: 'Az abszolút minimum, fordulj vissza és csinálj meg még pár feladatot.',
-      level: 2,
-      threshold: maxPoints * 0.4
-    }"></ng-container>
+        <ng-container *ngTemplateOutlet="level; context: {
+        description: 'Az abszolút minimum, fordulj vissza és csinálj meg még pár feladatot.',
+        level: 2,
+        threshold: maxPoints * 0.4
+      }"></ng-container>
 
-    <ng-container *ngTemplateOutlet="level; context: {
-      description: 'Még nem érted el a minimumot, így ne küldd be!',
-      level: 1,
-      threshold: 0
-    }"></ng-container>
-  </mat-card-content>
-</mat-card>
+        <ng-container *ngTemplateOutlet="level; context: {
+        description: 'Még nem érted el a minimumot, így ne küldd be!',
+        level: 1,
+        threshold: 0
+      }"></ng-container>
+    </div>
+  </ng-template>
+</nz-card>

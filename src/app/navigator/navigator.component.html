@@ -7,12 +7,17 @@
                          [selectedTask]="selectedTask"
                          (taskSelected)="selectTask($event)">
         <!-- Solution -->
-        <mat-card appearance="outlined" *ngIf="selectedTask">
-          <mat-card-header style="font-size: 20px; margin-bottom: 20px">
-            {{ currentIndex }}. {{ selectedTask }} feladat megoldása
-          </mat-card-header>
-          <mat-card-content>
-            <ng-container [ngSwitch]="true">
+        <nz-card *ngIf="selectedTask"
+                 [nzTitle]="navigatorTitleTemplate"
+                 [nzCover]="navigatorCoverTemplate"
+                 [nzActions]="[navigatorFooterTemplate]">
+          <ng-template #navigatorTitleTemplate>
+            <span style="font-size: 20px; margin-bottom: 20px">
+                {{ currentIndex }}. {{ selectedTask }} feladat megoldása
+            </span>
+          </ng-template>
+          <ng-template #navigatorCoverTemplate>
+            <div [ngSwitch]="true" style="padding: 10px">
               <ng-container *ngSwitchCase="currentIndex === 1">
                 <ng-container *ngIf="selectedTask === 'A'; else oneB">
                   <app-task1-a></app-task1-a>
@@ -54,17 +59,19 @@
                 </ng-template>
               </ng-container>
               <ng-container *ngSwitchDefault>Ha ezt a szöveget látod, akkor valamit elrontottam. :(</ng-container>
-            </ng-container>
-          </mat-card-content>
-          <mat-card-footer class="text-center">
-            <button mat-button (click)="selectTask(undefined)">
-              Vissza
-            </button>
-            <button mat-button (click)="nextTask()">
-              Tovább
-            </button>
-          </mat-card-footer>
-        </mat-card>
+            </div>
+          </ng-template>
+          <ng-template #navigatorFooterTemplate>
+            <div class="text-center">
+              <button nz-button (click)="selectTask(undefined)">
+                Vissza
+              </button>
+              <button nz-button (click)="nextTask()">
+                Tovább
+              </button>
+            </div>
+          </ng-template>
+        </nz-card>
       </app-task-selector>
     </ng-container>
   </ng-container>

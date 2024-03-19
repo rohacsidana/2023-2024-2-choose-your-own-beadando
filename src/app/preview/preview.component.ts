@@ -1,5 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {Component, inject, model} from '@angular/core';
+import {NZ_MODAL_DATA, NzModalRef} from "ng-zorro-antd/modal";
 
 @Component({
   selector: 'app-preview',
@@ -7,8 +7,9 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./preview.component.less']
 })
 export class PreviewComponent {
-  constructor(public dialogRef: MatDialogRef<PreviewComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: { imageUrl: string; text: string; }) {
-  }
+  constructor() {}
 
+  modal = inject(NzModalRef);
+  readonly data: { imageUrl: string, text: string } = inject(NZ_MODAL_DATA);
+  protected readonly model = model;
 }
