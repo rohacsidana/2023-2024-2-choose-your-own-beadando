@@ -5,11 +5,11 @@ export const tasks = [
       story: '',
       subTasks: [
         {
-          text: `Helyezz el a füleleten 4 darab Angular Material slidert
-          (https://material.angular.io/components/slider/overview).
+          text: `Helyezz el a füleleten 4 darab ng-zorro slidert
+          (https://ng.ant.design/components/slider/en).
 
 A sliderek egy szín beállítását fogják elősegíteni, RGBA (Red Green Blue Alpha) formátumban.
-A sliderek tehát sorban az Red, Green, Blue valamint Alpha értékek megadását teszik lehetővé.
+A sliderek tehát sorban a Red, Green, Blue valamint Alpha értékek megadását tegyék lehetővé.
 Emiatt az első három slider 0 és 255 közötti értéket tudjon felvenni, az utolsó pedig 0 és 1 közöttit.`,
           xp: 1
         },
@@ -17,7 +17,7 @@ Emiatt az első három slider 0 és 255 közötti értéket tudjon felvenni, az 
           text: `<b>Komponens-szintű stílusosztály</b> segítségével rajzolj ki egy négyzetet a sliderek alá.
 
 Az osztály (pl.: ".rectangle") tehát mindenképpen a komponenshez tartozó stílusfájlban foglaljon helyet és kapjon
-legalább egy magasságot, szélességet valamint szegélyt (bordert).`,
+legalább egy szélességet, magasságot valamint szegélyt (bordert).`,
           xp: 1
         },
         {
@@ -41,36 +41,36 @@ Ez a feladat teljesen független az első 3 részfeladattól. Nem a komponenshez
       story: '',
       subTasks: [
         {
-          text: `Készíts egy grid-et (https://material.angular.io/components/grid-list/overview) 4 listaelemmel.
+          text: `Készíts egy grid-et (https://ng.ant.design/components/grid/en) 4 listaelemmel.
           Az egyes elemeknek adj különböző háttérszínt, hogy az elrendezés mindig egyértelmű legyen.
 
 A feladat célja, hogy a rácsok eltérő módon legyenek elrendezve a böngészőablak méretétől függően.
 
-Segítség: A grid list dokumentációjának "Examples" fülén található példák tudnak segíteni az adatstruktúra kialakításában.`,
+Segítség: A grid dokumentációjában található példák tudnak segíteni az adatstruktúra kialakításában.`,
           xp: 1
         },
         {
           text: `Alapesetben a cellák legyen a következőképpen rendezve:
 
-Nagy felbontás (>= Large): Az első sort fele-fele arányban töltse ki az első két cella, a második sorban az 1.
+Nagy felbontás (lg, xl, xxl): Az első sort fele-fele arányban töltse ki az első két cella, a második sorban az 1.
 (összesen a 3.) cella a terület harmadát foglalja el, az utolsó cella pedig a maradék 2/3-ot.
 
-Közepes felbontás (Medium): Két soros legyen továbbra is a rács, egyenlő szélességű legyen minden cella.
+Közepes felbontás (md): Két soros legyen továbbra is a rács, egyenlő szélességű legyen minden cella.
 
-Kis felbontás (<= Small): 4 darab sora legyen a rácsnak, minden cella töltse ki az adott sor teljes szélességét.
+Kis felbontás (xs, sm): 4 darab sora legyen a rácsnak, minden cella töltse ki az adott sor teljes szélességét.
 
-Segítség: a méretekhez érdemes a material layout által definiált töréspontokat használni
-(ezekre hivatkoztam feljebb: Small, Medium, Large).
-Ezek, a komponensektől független részek, egy külön csomagban, a CDK-ban találhatóak:
-https://material.angular.io/cdk/layout/overview`,
+Segítség: a méretekhez érdemes a zorro layout által definiált töréspontokat használni
+(ezekre hivatkoztam feljebb: xs, sm,...).
+Ide kapcsolódó dokumentáció:
+https://ng.ant.design/components/layout/en`,
           xp: 1
         },
         {
           text: `Egy cella felé mozgatva az egeret jelenjen meg felugró tooltip-ben, hogy hány oszlop szélességet
           vesz fel az adott cella.
-          (A fentebb linkelt Grid List dokumentáció átnézése után ez tiszta lesz.)
+          (A fentebb linkelt grid dokumentáció átnézése után ez tiszta lesz.)
 
-Segítség: https://material.angular.io/components/tooltip/overview`,
+Segítség: https://ng.ant.design/components/tooltip/en`,
           xp: 1
         },
         {
@@ -108,14 +108,14 @@ A dolgozók a következő adatokkal rendelkezzenek:
           text: `Jelenítsd meg a dolgozók adatait egy kártyás nézetben.
 
 Ehhez hozz létre egy komponenst, amiben egy dolgozó adatait jeleníted meg egy kártyán
-(https://material.angular.io/components/card/overview) belül.
+(https://ng.ant.design/components/card/en) belül.
 
 A külső komponensben lépkedj végig a dolgozókon, mindegyikre jelenítsd meg az újonnan létrehozott komponenst,
 amely Input-ként (https://angular.io/api/core/Input) kapja meg az adott dolgozó adatait.`,
           xp: 1
         },
         {
-          text: `A lista felett legyen egy kapcsoló (https://material.angular.io/components/slide-toggle/overview)
+          text: `A lista felett legyen egy kapcsoló (https://ng.ant.design/components/switch/en)
           a következő szöveggel: "10-nél több hibával rendelkező dolgozók kiemelése".
 
 Amikor a kapcsoló aktív állapotban van, a 10 illetve 10-nél több hibával rendelkező dolgozók kártyájának háttere
@@ -132,7 +132,9 @@ A gomb minden kattintásra csökkentse 1-el a dolgozóhoz tartozó hibák érté
 
 Ha 10 alatti hibaszámhoz értünk akkor természetesen tűnjön el a gomb illetve a piros háttér is.
 
-A feladat megoldásához használj Output EventEmitter-t!`,
+A feladat megoldásához használj Output EventEmitter-t!
+
+Segítség: https://angular.io/guide/inputs-outputs`,
           xp: 1
         }
       ],
@@ -157,9 +159,9 @@ is össze ( [formGroup]="" ) a .html fájlban létrehozott űrlappal.
 
 Segítség: https://angular.io/guide/reactive-forms
 
-https://material.angular.io/components/checkbox/overview
+https://ng.ant.design/components/checkbox/en
 
-https://material.angular.io/components/datepicker/overview`,
+https://ng.ant.design/components/date-picker/en`,
           xp: 1
         },
         {
@@ -182,11 +184,11 @@ Ez akkor jelezzen hibát, ha a "korlátozott érvényesség" checkbox be van pip
         },
         {
           text: `Az űrlapon szerepeljen egy submit gomb is.
-          Gombnyomásra egy felugró dialogban
-          (https://material.angular.io/components/dialog/overview)
+          Gombnyomásra egy felugró modalban
+          (https://ng.ant.design/components/modal/en)
           írasd ki, hogy az űrlap valid-e vagy sem.
 
-Amennyiben az űrlap valid, a dialogban jelenjenek meg a megadott adatok is.
+Amennyiben az űrlap valid, a modalban jelenjenek meg a megadott adatok is.
 
 Például:
 
@@ -213,7 +215,7 @@ Például:
           A többi részfeladat alapján hozz helyes döntést abban,
           hogy pure vagy impure pipe-ot érdemes-e itt használni.
 
-A pipe titkosítsa paraméterként fogadott sztringet.
+A pipe titkosítsa a paraméterként fogadott sztringet.
 Az alfeladatokban részletezett esetekre írass ki 1-1 példát a komponensben.`,
           xp: 1
         },
@@ -226,7 +228,7 @@ Példa: {{ "12123434-56567878" | encrypt }} kimenete: "*7878"`,
         },
         {
           text: `Amennyiben az értéke látszólag egy telefonszám, az eredményben
-          a számok legyenek csillag karkterre cserélve, leszámítva az utolsó kettőt.
+          a számok legyenek csillag karakterre cserélve, leszámítva az utolsó kettőt.
 
 Elegendő egyetlen telefonszám formátumot kezelni, pl.: 06-20-123-4567.
 
@@ -248,7 +250,7 @@ Példa: {{ "password" | encrypt }} kimenete: "********"`,
       story: '',
       subTasks: [
         {
-          text: `Integráld az ngx-translate és a hozzá tartozó http-loader csomagokat (
+          text: `Integráld az ngx-translate és a hozzá tartozó http-loader NPM csomagokat (
           https://www.npmjs.com/package/@ngx-translate/core,
           https://www.npmjs.com/package/@ngx-translate/http-loader)
           a projektbe.
@@ -256,12 +258,12 @@ Példa: {{ "password" | encrypt }} kimenete: "********"`,
 Az AppModule-ban konfiguráld be a TranslateModule-t, hogy a fordításokat
 mindenhol használni lehessen a projektben.
 
-Hozz létre legalább 2 nyelvi fájlt.`,
+Hozz létre legalább 2 nyelvi fájlt (pl.: hu.json és en.json).`,
           xp: 1
         },
         {
-          text: `A felületen jeleníts meg egy Materialos Select
-          (https://material.angular.io/components/select/overview)
+          text: `A felületen jeleníts meg egy ng-zorro select
+          (https://ng.ant.design/components/select/en)
           elemet. Az elérhető opciók a támogatott nyelvek legyenek.
           Maguk az opciók az éppen kiválasztott nyelven jelenítsék
           meg a a nyelveket (pl. magyar nyelv esetén a két opció
@@ -312,9 +314,7 @@ Segítség: https://www.vitamindev.com/angular/how-to-use-parameters-in-ngx-tran
 
 A felhasználónak legyen lehetősége többet is választani a fenti opciókból.
 
-Segítség: https://angular.io/guide/attribute-directives
-
-https://material.angular.io/components/select/overview#multiple-selection.`,
+Segítség: https://ng.ant.design/components/select/en#components-select-demo-multiple.`,
           xp: 1
         },
         {
@@ -324,24 +324,28 @@ https://material.angular.io/components/select/overview#multiple-selection.`,
 A komponensben vegyél fel 1-1 DOM elemet (pl.: div) mindhárom jogosultsághoz és helyezd el
 rájuk a direktívát.
 
-A direktívának legyen egy Input paramétere is, amivel megadható, hogy az adott DOM elem tartalmát mely jogosultsággal
+A direktívának legyen legalább egy Input paramétere is, amivel megadható, hogy az adott DOM elem tartalmát mely jogosultsággal
 (olvasási, írási, adminisztrátori) rendelkező felhasználók érhetik el.
-Ezt az bemeneti paramétert is állítsd be a létrehozott DOM elemeken.
+Ezt a bemeneti paramétert is állítsd be a létrehozott DOM elemeken.
 
-Mindhárom elembe írd be szövegesen is, hogy melyik jogosultsági szinthez tartozik.`,
+Mindhárom elembe írd be szövegesen is, hogy melyik jogosultsági szinthez tartozik.
+
+Segítség: https://angular.io/guide/attribute-directives`,
           xp: 1
         },
         {
-          text: `Azon funkciók (DOM elemek) amelyekhez írási jogra lenne szükség, de a felhasználónak csak
-          olvasási joga van, kapjanak sárga hátteret.
+          text: `Azon funkció (2. részfeladat során felvett és felparaméterezett DOM elem) amelyhez írási jogra lenne
+          szükség, de a felhasználónak csak olvasási joga van (írási nincs, az 1. részfeladat választója alapján),
+          kapjon sárga hátteret.
+
+Természetesen ez változzon is dinamikusan, tehát ha kiválasztjuk az írási jogot akkor a sárga háttér tűnjön el.
           `,
           xp: 1
         },
         {
           text: `
-          Azok a funkciók amelyekhez adminisztrátori jogosultságra lenne szükség ne is jelenjen meg, ha
-          a felhasználó nem rendelkezik vele.
-          `,
+          Azon funkció (2. részfeladat során felvett és felparaméterezett DOM elem) amelyhez adminisztrátori
+          jogosultságra lenne szükség ne is jelenjen meg, ha a felhasználó nem rendelkezik vele.`,
           xp: 1
         },
       ],
@@ -355,21 +359,20 @@ Mindhárom elembe írd be szövegesen is, hogy melyik jogosultsági szinthez tar
           text: `Az ngx-image-cropper (https://www.npmjs.com/package/ngx-image-cropper) csomag lehetővé
           teszi, hogy képekről kivágj egy részt és csak ezt töltsd fel egy szerverre.
 
-Integráld ezt a csomagot a projektbe ("package.json", module import).
-          `,
+Integráld ezt a csomagot a projektbe ("package.json", module import).`,
           xp: 1
         },
         {
-          text: `A felületre kerüljön ki egy gomb, amelyet megnyomva egy dialog
-          (https://material.angular.io/components/dialog/overview) ugrik fel.
-          A dialogban legyen a felhasználónak lehetősége kiválasztani egy képet
+          text: `A felületre kerüljön ki egy gomb, amelyet megnyomva egy modal
+          (https://ng.ant.design/components/modal/en) ugrik fel.
+          A modalban legyen a felhasználónak lehetősége kiválasztani egy képet
           (ngx-image-cropper használatával).
           Az integrált csomag működjön is megfelelően, tehát a felhasználó tudja kiválasztani
           a kép "feltöltésre" szánt részét.
 
-A dialog footerjében legyen két gomb: "Bezárás" és "Mentés".
+A modal footerében legyen két gomb: "Bezárás" és "Mentés".
 
-A "Bezárás" gomb zárja be a dialog.`,
+A "Bezárás" gomb zárja be a modalt.`,
           xp: 1
         },
         {
@@ -377,19 +380,18 @@ A "Bezárás" gomb zárja be a dialog.`,
           Base64 sztring formátumban.
 
 A mentésre elegendő mindig ugyanazt a localStorage kulcsot használni, tehát mindig csak egy
-kép lehessen "feltöltve". Ellenkező esetben az 5MB-os localStorage limit könnyen elérhető lenne!
-          `,
+kép lehessen "feltöltve". Ellenkező esetben az 5MB-os localStorage limit könnyen elérhető lenne!`,
           xp: 1
         },
         {
-          text: `A dialog nyitó gomb mellett jelenjen meg a kép, amennyiben szerepel localStorage-ben.
+          text: `A modal-nyitó gomb mellett jelenjen meg a kép, amennyiben szerepel localStorage-ben.
 
-Ha még nem szerepel localStorage-ben kép, akkor a "Kérjük először töltsön fel egy képet!" szöveg jelenjen meg!
-          `,
+Ha még nem szerepel localStorage-ben kép, akkor a "Kérjük először töltsön fel egy képet!"
+szöveg jelenjen meg a helyén!`,
           xp: 1
         },
       ],
-      title: `Dialog & Image Cropper`
+      title: `Modal & Image Cropper`
     },
   },
   {
@@ -406,13 +408,13 @@ Ha még nem szerepel localStorage-ben kép, akkor a "Kérjük először töltsö
 A generálás legyen randomizált. A gyártók legyenek valósszerűek (például használhatsz egy tömböt, amiből mindig
 véletlenszerűen választasz egy elemet), a típusoknál ez nem szükséges, random generált sztring is megfelelő).
 
-Segítség: A struktúra kialakításában segítenek a fa komponenshez kapcsolódó példák:
-https://material.angular.io/components/tree/examples`,
+Segítség: A struktúra kialakításában segítenek a fa komponenshez kapcsolódó példák (lásd: NzTreeNode, NzTreeNodeOptions):
+https://ng.ant.design/components/tree/en`,
           xp: 1
         },
         {
           text: `Az előző feladatban definiált service használatával generálj
-          20 autót (típust) és tárold el a struktúrát egy komponens-változóban inicializációkor.`,
+          20 autót (típust) és tárold el a struktúrát egy komponens-változóban a komponens inicializációjakor (OnInit).`,
           xp: 1
         },
         {
@@ -459,14 +461,16 @@ A generálás legyen randomizált, de legalább a gyártás éve és a rendszám
           A virtual scrolling célja az, hogy a DOM-ban ne jelenjen meg mind a 10000 sor
           (ez az ablak befagyásához vezetne), csak azok, amelyek éppen látszanak is (plusz pár sor bufferként).
 
-Segítség: https://material.angular.io/cdk/scrolling/overview`,
+Segítség: https://material.angular.io/cdk/scrolling/overview
+
+https://ng.ant.design/components/table/en#components-table-demo-virtual`,
           xp: 1
         },
         {
-          text: `Amikor a gyártás éve felé mozgatjuk az elemet, akkor jelenjen meg az autó rendszáma.
+          text: `Amikor a gyártás éve felé mozgatjuk az egeret, akkor jelenjen meg az autó rendszáma.
 
-Erre használjátok a materialos tooltip funkciót:
-https://material.angular.io/components/tooltip/overview`,
+Erre használjátok az ng-zorro tooltip funkcióját:
+https://ng.ant.design/components/tooltip/en`,
           xp: 1
         }
       ],

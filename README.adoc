@@ -4,13 +4,13 @@
 
 === Task 1
 
-==== A - Component
+==== A - Styling
 
-==== B - Template
+==== B - Responsivity
 
 === Task 2
 
-==== A - Styling
+==== A - Component
 
 ==== B - Form validation
 
@@ -24,10 +24,10 @@
 
 ==== A - Directive
 
-==== B - Service
+==== B - Modal & Image Cropper
 
 === Task 5
 
-==== A - Drag & Drop
+==== A - Tree & Clipboard
 
 ==== B - Virtual scrolling
