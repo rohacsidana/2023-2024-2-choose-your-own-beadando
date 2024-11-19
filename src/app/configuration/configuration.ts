@@ -3,19 +3,19 @@ export const configuration = [
   {
     A: {
       subTasks: {
-        1: false,
-        2: false,
-        3: false,
-        4: false
-      }
+        1: true,
+        2: true,
+        3: true,
+        4: false,
+      },
     },
     B: {
       subTasks: {
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
   },
   // Task 2
@@ -25,16 +25,16 @@ export const configuration = [
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
     B: {
       subTasks: {
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
   },
   // Task 3
@@ -44,16 +44,16 @@ export const configuration = [
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
     B: {
       subTasks: {
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
   },
   // Task 4
@@ -63,16 +63,16 @@ export const configuration = [
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
     B: {
       subTasks: {
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
   },
   // Task 5
@@ -82,16 +82,16 @@ export const configuration = [
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
     B: {
       subTasks: {
         1: false,
         2: false,
         3: false,
-        4: false
-      }
+        4: false,
+      },
     },
-  }
-]
+  },
+];

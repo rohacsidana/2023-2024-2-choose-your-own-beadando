@@ -1,1 +1,33 @@
-<p>task1-a works!</p>
+<p>Red:</p>
+<nz-slider
+  [(ngModel)]="redValue"
+  [nzMin]="rgbMin"
+  [nzMax]="rgbMax"
+  [nzStep]="1"
+></nz-slider>
+
+<p>Green:</p>
+<nz-slider
+  [(ngModel)]="greenValue"
+  [nzMin]="rgbMin"
+  [nzMax]="rgbMax"
+  [nzStep]="1"
+></nz-slider>
+
+<p>Blue:</p>
+<nz-slider
+  [(ngModel)]="blueValue"
+  [nzMin]="rgbMin"
+  [nzMax]="rgbMax"
+  [nzStep]="1"
+></nz-slider>
+
+<p>Alpha:</p>
+<nz-slider
+  [(ngModel)]="alphaValue"
+  [nzMin]="0"
+  [nzMax]="1"
+  [nzStep]=".01"
+></nz-slider>
+
+<div class="rectangle" [style.background-color]="backgroundColor"></div>
