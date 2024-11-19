@@ -33,6 +33,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { WorkerCardComponent } from './tasks/2/A/worker-card/worker-card.component';
 
 registerLocaleData(en);
 
@@ -74,6 +76,7 @@ const zorroModules = [
     TaskSelectorComponent,
     SummaryComponent,
     PreviewComponent,
+    WorkerCardComponent,
   ],
   imports: [
     ...zorroModules,
@@ -84,6 +87,8 @@ const zorroModules = [
     RouterModule,
     FormsModule,
     NzSliderModule,
+    NzCardModule,
+    NzSwitchModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

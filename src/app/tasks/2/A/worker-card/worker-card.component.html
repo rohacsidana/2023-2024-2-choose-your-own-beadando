@@ -1,0 +1,15 @@
+<nz-card
+  style="width: 300px"
+  nzTitle="{{ worker.name }}"
+  [ngClass]="{ emphasizeBackground: emphasize && isBadWorker() }"
+>
+  <p>Jogosultsági szint: {{ authString(worker.auth) }}</p>
+  <p>Vétett hibák száma: {{ worker.mistakes }}</p>
+  <button
+    class="ant-btn"
+    *ngIf="emphasize && isBadWorker()"
+    (click)="changeClick()"
+  >
+    Hiba feloldása
+  </button>
+</nz-card>
