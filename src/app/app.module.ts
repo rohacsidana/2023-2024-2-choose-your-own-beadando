@@ -44,6 +44,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient } from '@angular/common/http';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { WorkerCardComponent } from './tasks/2/A/worker-card/worker-card.component';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(en);
 
@@ -86,6 +87,7 @@ const zorroModules = [
     MarkdownModule.forRoot(),
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     NzSliderModule,
     NzCardModule,
     NzSwitchModule,
