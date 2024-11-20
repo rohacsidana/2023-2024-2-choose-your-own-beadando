@@ -47,6 +47,7 @@ import { WorkerCardComponent } from './tasks/2/A/worker-card/worker-card.compone
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { EncryptPipe } from './tasks/3/A/encrypt.pipe';
 
 registerLocaleData(en);
 
@@ -95,6 +96,7 @@ const zorroModules = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    EncryptPipe,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
