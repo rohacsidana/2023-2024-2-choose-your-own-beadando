@@ -1,2 +1,46 @@
-<!-- <p>task2-b works!</p> -->
- 
+<form [formGroup]="form">
+  <label for="license-key">Licence kulcs: </label>
+  <input id="license-key" type="text" formControlName="licenseKey" />
+
+  <hr />
+  <label nz-checkbox formControlName="limitedValidity">
+    Korlátozott érvényesség
+  </label>
+  <hr />
+
+  <label>Érvényesség lejárta: </label>
+  <nz-date-picker
+    [nzDisabled]="!form.get('limitedValidity')?.value"
+    nzFormat="yyyy-MM-dd"
+    formControlName="expiryDate"
+  ></nz-date-picker>
+
+  <p *ngIf="formError()">Nincs megadva dátum.</p>
+  <br />
+  <button nz-button [nzType]="'primary'" (click)="showModal()" type="submit">
+    Küldés
+  </button>
+  <nz-modal
+    [(nzVisible)]="modalIsVisible"
+    nzTitle="Adatok"
+    (nzOnCancel)="modalIsVisible = false"
+    (nzOnOk)="modalIsVisible = false"
+  >
+    <ng-container *nzModalContent>
+      <p>Az űrlap valid!</p>
+      <p>Licence: {{ this.form.get("licenseKey")?.value }}</p>
+      <p>
+        Korlátozott érvényesség:
+        {{ this.form.get("limitedValidity")?.value ? "igen" : "nem" }}
+      </p>
+      <p>
+        Érvényesség:
+        {{
+          this.form.get("limitedValidity")?.value
+            ? this.form.get("licenseKey")?.value
+            : "nincs"
+        }}
+      </p>
+    </ng-container>
+  </nz-modal>
+</form>

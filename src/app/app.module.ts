@@ -45,6 +45,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { WorkerCardComponent } from './tasks/2/A/worker-card/worker-card.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 registerLocaleData(en);
 
@@ -57,6 +59,11 @@ const zorroModules = [
   NzListModule,
   NzMenuModule,
   NzModalModule,
+  NzSliderModule,
+  NzCardModule,
+  NzSwitchModule,
+  NzDatePickerModule,
+  NzCheckboxModule,
 ];
 
 @NgModule({
@@ -88,9 +95,6 @@ const zorroModules = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NzSliderModule,
-    NzCardModule,
-    NzSwitchModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
