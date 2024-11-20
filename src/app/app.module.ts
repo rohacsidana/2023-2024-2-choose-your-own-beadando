@@ -52,6 +52,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { PermissionDirective } from './tasks/4/A/permission.directive';
 
 registerLocaleData(en);
 
@@ -91,6 +92,7 @@ const zorroModules = [
     SummaryComponent,
     PreviewComponent,
     WorkerCardComponent,
+    PermissionDirective,
   ],
   imports: [
     ...zorroModules,
@@ -103,6 +105,7 @@ const zorroModules = [
     ReactiveFormsModule,
     EncryptPipe,
     HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -1,1 +1,28 @@
-<p>task4-a works!</p>
+<nz-select
+  [nzMaxTagCount]="3"
+  nzMode="multiple"
+  nzPlaceHolder="Kérjük válasszon..."
+  [(ngModel)]="userPermissions"
+  style="min-width: 200px"
+>
+  <nz-option
+    *ngFor="let item of listOfOption"
+    [nzLabel]="item"
+    [nzValue]="item"
+  ></nz-option>
+</nz-select>
+
+<div [appPermission]="'Olvasási jog'" [userPermissions]="userPermissions">
+  Ez a rész az 'Olvasási jog' felhasználóknak van fenntartva.
+</div>
+
+<div [appPermission]="'Írási jog'" [userPermissions]="userPermissions">
+  Ez a rész az 'Írási jog' felhasználóknak van fenntartva.
+</div>
+
+<div
+  [appPermission]="'Adminisztrátori jog'"
+  [userPermissions]="userPermissions"
+>
+  Ez a rész az 'Adminisztrátori jog' felhasználóknak van fenntartva.
+</div>
