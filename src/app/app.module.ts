@@ -41,13 +41,17 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { WorkerCardComponent } from './tasks/2/A/worker-card/worker-card.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { EncryptPipe } from './tasks/3/A/encrypt.pipe';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 registerLocaleData(en);
 
@@ -65,6 +69,7 @@ const zorroModules = [
   NzSwitchModule,
   NzDatePickerModule,
   NzCheckboxModule,
+  NzSelectModule,
 ];
 
 @NgModule({
@@ -97,6 +102,14 @@ const zorroModules = [
     FormsModule,
     ReactiveFormsModule,
     EncryptPipe,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
@@ -106,3 +119,7 @@ const zorroModules = [
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

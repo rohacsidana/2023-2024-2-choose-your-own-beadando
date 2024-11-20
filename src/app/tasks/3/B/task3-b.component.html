@@ -1,1 +1,8 @@
-<p>task3-b works!</p>
+<nz-select
+  [(ngModel)]="selectedLanguage"
+  (ngModelChange)="switchLanguage($event)"
+>
+  <nz-option [nzValue]="'hu'" [nzLabel]="'LANGUAGE1' | translate"></nz-option>
+  <nz-option [nzValue]="'en'" [nzLabel]="'LANGUAGE2' | translate"></nz-option>
+</nz-select>
+<p>{{ "TEXT" | translate : { num: changeCounter } }}</p>
