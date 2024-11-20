@@ -1,1 +1,32 @@
-<p>task4-b works!</p>
+<button nz-button [nzType]="'primary'" (click)="showModal()">
+  <span>Modal megnyitása</span></button
+><img
+  [src]="croppedImage"
+  *ngIf="croppedImage"
+  alt="Cropped Image"
+  style="max-width: 100%"
+/>
+<p *ngIf="!croppedImage">Kérjük először töltsön fel egy képet!</p>
+<nz-modal
+  [(nzVisible)]="modalIsVisible"
+  nzTitle="Modal"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="exitModal()"
+>
+  <ng-container *nzModalContent>
+    <input type="file" (change)="fileChangeEvent($event)" />
+
+    <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 3"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+    ></image-cropper>
+
+    <!-- <img [src]="croppedImage" /> --> </ng-container
+  ><ng-template #modalFooter>
+    <button nz-button nzType="default" (click)="exitModal()">Bezárás</button>
+    <button nz-button nzType="primary" (click)="saveImage()">Mentés</button>
+  </ng-template>
+</nz-modal>
