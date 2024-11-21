@@ -1,1 +1,8 @@
-<p>task5-a works!</p>
+<nz-tree
+  [nzData]="carTree"
+  ngxClipboard
+  nzBlockNode
+  nzVirtualHeight="300px"
+  [cbContent]="selectedNodeTitle"
+  (nzClick)="onModelClick($event)"
+></nz-tree>

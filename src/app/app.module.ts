@@ -44,7 +44,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { WorkerCardComponent } from './tasks/2/A/worker-card/worker-card.component';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { EncryptPipe } from './tasks/3/A/encrypt.pipe';
@@ -53,11 +53,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { PermissionDirective } from './tasks/4/A/permission.directive';
-import {
-  ImageCropperComponent,
-  ImageCroppedEvent,
-  LoadedImage,
-} from 'ngx-image-cropper';
+import { ImageCropperComponent } from 'ngx-image-cropper';
+import { NzTreeModule } from 'ng-zorro-antd/tree';
+import { ClipboardModule } from 'ngx-clipboard';
 
 registerLocaleData(en);
 
@@ -76,6 +74,7 @@ const zorroModules = [
   NzDatePickerModule,
   NzCheckboxModule,
   NzSelectModule,
+  NzTreeModule,
 ];
 
 @NgModule({
@@ -111,6 +110,7 @@ const zorroModules = [
     EncryptPipe,
     HttpClientModule,
     ImageCropperComponent,
+    ClipboardModule,
 
     TranslateModule.forRoot({
       loader: {
