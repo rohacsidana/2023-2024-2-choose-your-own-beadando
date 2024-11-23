@@ -56,6 +56,9 @@ import { PermissionDirective } from './tasks/4/A/permission.directive';
 import { ImageCropperComponent } from 'ngx-image-cropper';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 registerLocaleData(en);
 
@@ -111,6 +114,9 @@ const zorroModules = [
     HttpClientModule,
     ImageCropperComponent,
     ClipboardModule,
+    ScrollingModule,
+    NzTableModule,
+    NzToolTipModule,
 
     TranslateModule.forRoot({
       loader: {
