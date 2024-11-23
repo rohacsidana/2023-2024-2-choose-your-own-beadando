@@ -59,7 +59,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-
+import { NzGridModule } from 'ng-zorro-antd/grid';
 registerLocaleData(en);
 
 const zorroModules = [
@@ -78,6 +78,9 @@ const zorroModules = [
   NzCheckboxModule,
   NzSelectModule,
   NzTreeModule,
+  NzTableModule,
+  NzToolTipModule,
+  NzGridModule,
 ];
 
 @NgModule({
@@ -115,8 +118,6 @@ const zorroModules = [
     ImageCropperComponent,
     ClipboardModule,
     ScrollingModule,
-    NzTableModule,
-    NzToolTipModule,
 
     TranslateModule.forRoot({
       loader: {
