@@ -8,11 +8,11 @@
     [nzLg]="item.size.lg"
     [style.background-color]="item.color"
     nz-tooltip
-    [nzTooltipTitle]="'Szélesség: ' + getItemWidth(item)"
-    nzTooltipPlacement="topLeft"
+    [nzTooltipTitle]="'Méret: ' + getItemWidth(item) + ' oszlop'"
+    nzTooltipPlacement="top"
   >
     <p>{{ item.name }}</p>
-    <button (click)="decreaseWidth(item)">-</button>
-    <button (click)="increaseSize(item)">+</button>
+    <button nz-button (click)="decreaseWidth(item)">-</button>
+    <button nz-button (click)="increaseSize(item)">+</button>
   </div>
 </div>
