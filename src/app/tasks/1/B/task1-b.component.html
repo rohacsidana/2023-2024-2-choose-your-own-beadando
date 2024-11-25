@@ -1,54 +1,18 @@
 <div nz-row [nzGutter]="16">
   <div
+    *ngFor="let item of items"
     nz-col
-    [nzXs]="24"
-    [nzSm]="24"
-    [nzMd]="12"
-    [nzLg]="12"
-    style="background-color: #ffcccc"
+    [nzXs]="item.size.xs"
+    [nzSm]="item.size.sm"
+    [nzMd]="item.size.md"
+    [nzLg]="item.size.lg"
+    [style.background-color]="item.color"
     nz-tooltip
-    nzTooltipTitle="hey"
+    [nzTooltipTitle]="'Szélesség: ' + getItemWidth(item)"
     nzTooltipPlacement="topLeft"
   >
-    <p>I.</p>
-  </div>
-  <div
-    nz-col
-    [nzXs]="24"
-    [nzSm]="24"
-    [nzMd]="12"
-    [nzLg]="12"
-    style="background-color: #ccffcc"
-    nz-tooltip
-    nzTooltipTitle="hey"
-    nzTooltipPlacement="topLeft"
-  >
-    <p>II.</p>
-  </div>
-  <div
-    nz-col
-    [nzXs]="24"
-    [nzSm]="24"
-    [nzMd]="12"
-    [nzLg]="8"
-    style="background-color: #ccccff"
-    nz-tooltip
-    nzTooltipTitle="hey"
-    nzTooltipPlacement="topLeft"
-  >
-    <p>III.</p>
-  </div>
-  <div
-    nz-col
-    [nzXs]="24"
-    [nzSm]="24"
-    [nzMd]="12"
-    [nzLg]="16"
-    style="background-color: #ffffcc"
-    nz-tooltip
-    nzTooltipTitle="hey"
-    nzTooltipPlacement="topLeft"
-  >
-    <p>IV.</p>
+    <p>{{ item.name }}</p>
+    <button (click)="decreaseWidth(item)">-</button>
+    <button (click)="increaseSize(item)">+</button>
   </div>
 </div>
